@@ -1,0 +1,14 @@
+# Node dependencies
+node_modules/
+
+# Compiled CSS (optional, usually regenerated)
+dist/
+
+# Live Server files (if any appear)
+.live-server.*
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+.idea
