@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "imageSrc": "images/property1.jpg",
+    "imageAlt": "Luxury Family Home",
+    "price": "$5,800",
+    "title": "Luxury Family Home",
+    "address": "132 Greene Ave, Brooklyn",
+    "beds": 6,
+    "baths": 2,
+    "sqft": 400,
+    "status": "For Sale"
+  },
+  {
+    "id": 2,
+    "imageSrc": "images/property2.jpg",
+    "imageAlt": "Gorgeous Villa Bay",
+    "price": "$4,800",
+    "title": "Gorgeous Villa Bay",
+    "address": "18 Grattan St, Brooklyn",
+    "beds": 8,
+    "baths": 2,
+    "sqft": 300,
+    "status": "For Sale"
+  },
+  {
+    "id": 3,
+    "imageSrc": "images/property3.jpg",
+    "imageAlt": "Skyper Pool Apartment",
+    "price": "$2,850",
+    "title": "Skyper Pool Apartment",
+    "address": "151 Tompkins Ave",
+    "beds": 4,
+    "baths": 1,
+    "sqft": 200,
+    "status": "For Rent"
+  },
+  {
+    "id": 4,
+    "imageSrc": "images/property4.jpg",
+    "imageAlt": "Diamond Manor Apartment",
+    "price": "$3,500",
+    "title": "Diamond Manor Apartment",
+    "address": "343 Franklin Ave",
+    "beds": 3,
+    "baths": 1,
+    "sqft": 200,
+    "status": "For Sale"
+  }
+]

@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Real Estate - Find Your Dream Home</title>
-    <link rel="stylesheet" href="dist/css/style.css">
+    <link rel="stylesheet" href="/dist/css/style.css">
 </head>
 <body>
 
 <section class="hero">
-    <header class="hero-header">
+    <header class="hero-header container">
         <a href="#" class="logo">Real Estate</a>
         <button class="menu-toggle" aria-label="Toggle menu">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M4 6H20M4 12H20M4 18H20" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> </svg>
@@ -29,19 +29,13 @@
             </nav>
             <form class="search-form">
                 <div class="search-input-group">
-                    <!-- Search Icon -->
                     <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke="#888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 21L16.65 16.65" stroke="#888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-
                     <input type="text" class="search-input" placeholder="Enter an address, neighborhood, city, or ZIP code">
-
                     <button type="button" class="advanced-button">
-                        <!-- Filtring Icon -->
                         <svg class="filter-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 6H19M10 12H14M3 18H21" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                         Advanced
                     </button>
-
                     <button type="submit" class="search-button" aria-label="Search">
-                        <!-- Search Icon -->
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 21L16.65 16.65" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                     </button>
                 </div>
@@ -50,7 +44,141 @@
     </div>
 </section>
 
-<!-- Rest of site -->
+<section class="property-types section-padding">
+    <div class="container">
+        <h2 class="section-title">Choose Your Type</h2>
+        <p class="section-subtitle">Select the type you are interested in</p>
+        <div class="types-slider">
+            <div class="type-card">
+                <div class="type-icon-placeholder"></div>
+                <h4 class="type-name">Houses</h4>
+                <p class="type-count">7 Properties</p>
+            </div>
+            <div class="type-card">
+                <div class="type-icon-placeholder"></div>
+                <h4 class="type-name">Apartments</h4>
+                <p class="type-count">3 Properties</p>
+            </div>
+            <div class="type-card">
+                <div class="type-icon-placeholder"></div>
+                <h4 class="type-name">Office</h4>
+                <p class="type-count">4 Properties</p>
+            </div>
+            <div class="type-card">
+                <div class="type-icon-placeholder"></div>
+                <h4 class="type-name">Villa</h4>
+                <p class="type-count">4 Properties</p>
+            </div>
+            <div class="type-card">
+                <div class="type-icon-placeholder"></div>
+                <h4 class="type-name">Townhome</h4>
+                <p class="type-count">2 Properties</p>
+            </div>
+            <div class="type-card">
+                <div class="type-icon-placeholder"></div>
+                <h4 class="type-name">Bungalow</h4>
+                <p class="type-count">1 Property</p>
+            </div>
+            <div class="type-card">
+                <div class="type-icon-placeholder"></div>
+                <h4 class="type-name">Loft</h4>
+                <p class="type-count">2 Properties</p>
+            </div>
+        </div>
+        <div class="slider-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </div>
+</section>
+
+
+<section class="discover-properties section-padding dark-bg">
+    <div class="container">
+        <h2 class="section-title">Discover Available Properties</h2>
+        <p class="section-subtitle">Our offers tailored to Yours requirements</p>
+
+        <div class="property-filter-tabs">
+            <button class="tab active">For Sale</button>
+            <button class="tab">For Rent</button>
+        </div>
+
+        <div class="properties-grid" id="properties-grid-container">
+            <!-- Cards here with properties -->
+        </div>
+
+        <button class="btn btn-primary see-more-btn">See More</button>
+    </div>
+</section>
+
+<template id="property-card-template">
+    <div class="property-card">
+        <div class="card-image">
+            <img src="" alt="" data-image>
+            <span class="price-tag" data-price></span>
+        </div>
+        <div class="card-content">
+            <h4 class="property-title" data-title></h4>
+            <p class="property-address" data-address></p>
+            <div class="property-features">
+                <span data-beds><svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V7M9 21V11h6v10M2 10h20M16 5l-4-4-4 4" stroke="#888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> <span class="feature-value"></span> Beds</span>
+                <span data-baths><svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M12 11a4 4 0 100-8 4 4 0 000 8zM20 11a4 4 0 100-8 4 4 0 000 8z" stroke="#888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> <span class="feature-value"></span> Baths</span>
+                <span data-sqft><svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2M12 2v20M4 12h16" stroke="#888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> <span class="feature-value"></span> sqft</span>
+            </div>
+            <div class="card-footer">
+                <span class="property-status" data-status></span>
+                <div class="property-actions">
+                    <button aria-label="Share"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8M16 6l-4-4-4 4M12 2v13" stroke="#888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                    <button aria-label="Favorite"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" stroke="#888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                    <button aria-label="Compare"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 8l4 4-4 4M3 12h18M7 20l-4-4 4-4" stroke="#888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<section class="need-help section-padding">
+    <div class="container help-container">
+        <div class="help-text">
+            <h2 class="section-title">Need Help? Talk To Our Expert.</h2>
+            <p class="section-subtitle">Talk to our experts or Browse through more properties.</p>
+        </div>
+        <div class="help-actions">
+            <button class="btn btn-outline">Contact Us <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 8l4 4-4 4M3 12h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            <button class="btn btn-dark"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> 920 851 8585</button>
+        </div>
+    </div>
+</section>
+
+<footer class="site-footer dark-bg">
+    <div class="container footer-container">
+        <div class="footer-col contact-info">
+            <h3 class="footer-logo">Real Estate</h3>
+            <p><strong>Phone number</strong><br>+ (088) 123 456 789</p>
+            <p><strong>Email</strong><br>realestate@email.com</p>
+        </div>
+        <div class="footer-col social-media">
+            <h4 class="footer-heading">Follow us on social media</h4>
+            <div class="social-icons">
+                <a href="#" aria-label="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" fill="currentColor"/></svg></a>
+                <a href="#" aria-label="Twitter"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" fill="currentColor"/></svg></a>
+                <a href="#" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="currentColor" stroke-width="2"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                <a href="#" aria-label="LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </div>
+        </div>
+    </div>
+    <div class="container footer-bottom">
+        <p>© Real Estate – All rights reserved</p>
+        <nav class="footer-nav">
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+            <a href="#">Sitemap</a>
+        </nav>
+    </div>
+</footer>
 
 <script src="src/js/script.js"></script>
 </body>

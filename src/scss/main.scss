@@ -1,6 +1,5 @@
 $primary-color: #ffffff;
 $text-color: #ffffff;
-
 $widget-bg: #ffffff;
 $input-group-bg: #f8f9fa;
 $active-tab-color: #212529;
@@ -13,34 +12,227 @@ $border-radius-large: 30px;
 $border-radius-widget: 12px;
 $primary-font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
+$dark-bg-color: #1c1f26;
+$light-bg-color: #ffffff;
+$secondary-text-color: #adb5bd;
+$card-bg-color: #ffffff;
+$dark-text-color: #212529;
+$light-grey-bg: #f8f9fa;
+$border-color: #dee2e6;
+$border-radius-card: 10px;
+$border-radius-small: 6px;
+
+$spacing-unit: 1rem;
+
 body {
-  font-family: sans-serif;
+  font-family: $primary-font;
+  color: $dark-text-color;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $spacing-unit * 1.5;
+  padding-right: $spacing-unit * 1.5;
+}
+
+.section-padding {
+  padding-top: $spacing-unit * 4;
+  padding-bottom: $spacing-unit * 4;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.25rem;
+  margin-bottom: $spacing-unit * 0.5;
+  color: $dark-text-color;
+  font-weight: 600;
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 1rem;
+  color: $inactive-tab-color;
+  margin-bottom: $spacing-unit * 2.5;
+}
+
+.dark-bg {
+  background-color: $dark-bg-color;
   color: $text-color;
+
+  .section-title,
+  .property-title {
+    color: $text-color;
+  }
+  .section-subtitle,
+  .property-address,
+  .property-status,
+  .property-features span,
+  .footer-heading {
+    color: $secondary-text-color;
+  }
+  .property-card {
+    background-color: lighten($dark-bg-color, 5%);
+  }
+  .property-filter-tabs .tab {
+    background-color: lighten($dark-bg-color, 10%);
+    color: $secondary-text-color;
+    &.active {
+      background-color: $widget-bg;
+      color: $dark-text-color;
+    }
+  }
+  .property-card .card-image .price-tag {
+    background-color: $widget-bg;
+    color: $dark-text-color;
+  }
+  .property-card .property-features {
+    border-color: lighten($dark-bg-color, 15%);
+    color: $secondary-text-color;
+    svg {
+      path, line, polyline, circle, rect { stroke: $secondary-text-color; }
+    }
+  }
+  .property-card .property-actions button {
+    color: $secondary-text-color;
+    svg { path, line, polyline, circle, rect { stroke: $secondary-text-color; } }
+  }
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: ($spacing-unit * 0.75) ($spacing-unit * 1.5);
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: $border-radius-large;
+  border: 2px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+
+  svg {
+    margin-left: $spacing-unit * 0.5;
+    width: 16px;
+    height: 16px;
+  }
+  &.btn-dark svg {
+    margin-right: $spacing-unit * 0.5;
+    margin-left: 0;
+  }
+}
+
+.btn-primary {
+  background-color: $button-bg;
+  color: $button-icon-color;
+  &:hover {
+    background-color: darken($button-bg, 10%);
+  }
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: $dark-text-color;
+  border-color: $border-color;
+  &:hover {
+    background-color: $light-grey-bg;
+  }
+}
+
+.btn-dark {
+  background-color: $dark-text-color;
+  color: $button-icon-color;
+  &:hover {
+    background-color: lighten($dark-text-color, 10%);
+  }
 }
 
 .hero {
-  background-image: url("../../images/bg.jpg");
+  background-image: url("/images/bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
-}
-
-.hero-header {
+  background-position: center center;
+  height: 75vh;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  color: $text-color;
+  position: relative;
+
+  .hero-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: $spacing-unit;
+    padding-bottom: $spacing-unit;
+    width: 100%;
+    z-index: 10;
+  }
+
+  .logo {
+    color: $primary-color;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+
+  .menu-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    svg path {
+      stroke: $primary-color;
+    }
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    padding: $spacing-unit * 2;
+    text-align: center;
+  }
+
+  .hero-subtitle {
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: $spacing-unit * 0.5;
+    letter-spacing: 1px;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: $spacing-unit * 0.75;
+    color: $primary-color;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+    margin-bottom: $spacing-unit * 2;
+    max-width: 400px;
+  }
 }
 
-.hero-content {
-}
 
 .search-widget {
   background-color: $widget-bg;
   padding: 15px;
   border-radius: $border-radius-widget;
   max-width: 700px;
-  margin: 2rem auto;
+  width: 100%;
+  margin: 0 auto;
   font-family: $primary-font;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  color: $dark-text-color;
 
   .search-tabs {
     display: flex;
@@ -108,7 +300,7 @@ body {
         background: none;
         outline: none;
         font-size: 16px;
-        color: #333;
+        color: $dark-text-color;
         width: 100%;
 
         &::placeholder {
@@ -173,11 +365,418 @@ body {
   }
 }
 
-h1 {
-  color: $primary-color;
-  text-align: center;
+
+.property-types {
+  background-color: $light-bg-color;
 }
 
-p {
+.types-slider {
+  display: flex;
+  gap: $spacing-unit * 1.5;
+  overflow-x: auto;
+  padding-bottom: $spacing-unit * 1.5;
+  margin-bottom: $spacing-unit * 1.5;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.type-card {
+  background-color: $light-grey-bg;
+  padding: $spacing-unit * 1.5;
+  border-radius: $border-radius-card;
   text-align: center;
+  min-width: 150px;
+  flex-shrink: 0;
+  transition: box-shadow 0.2s ease;
+
+  &:hover {
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  }
+}
+
+.type-icon-placeholder {
+  width: 70px;
+  height: 70px;
+  background-color: $widget-bg;
+  border-radius: 50%;
+  margin: 0 auto $spacing-unit;
+  border: 1px solid $border-color;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.type-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: $spacing-unit * 0.25;
+  color: $dark-text-color;
+}
+
+.type-count {
+  font-size: 0.9rem;
+  color: $inactive-tab-color;
+  margin: 0;
+}
+
+.slider-dots {
+  text-align: center;
+  margin-top: $spacing-unit;
+
+  .dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #d8dce0;
+    border-radius: 50%;
+    margin: 0 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+
+    &.active {
+      background-color: $dark-text-color;
+    }
+  }
+}
+
+.property-filter-tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: $spacing-unit * 2.5;
+  gap: $spacing-unit;
+
+  .tab {
+    padding: ($spacing-unit * 0.6) ($spacing-unit * 1.25);
+    border: none;
+    background-color: $light-grey-bg;
+    color: $inactive-tab-color;
+    border-radius: $border-radius-small;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &.active {
+      background-color: $dark-text-color;
+      color: $widget-bg;
+      font-weight: 600;
+    }
+    &:hover:not(.active) {
+      opacity: 0.8;
+    }
+  }
+}
+
+.properties-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: $spacing-unit * 2;
+  margin-bottom: $spacing-unit * 3;
+}
+
+.property-card {
+  background-color: $card-bg-color;
+  border-radius: $border-radius-card;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  }
+
+  .card-image {
+    position: relative;
+    height: 200px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .price-tag {
+      position: absolute;
+      bottom: $spacing-unit;
+      left: $spacing-unit;
+      background-color: rgba(0, 0, 0, 0.6);
+      color: $text-color;
+      padding: ($spacing-unit * 0.3) ($spacing-unit * 0.8);
+      border-radius: $border-radius-small;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+  }
+
+  .card-content {
+    padding: $spacing-unit * 1.25;
+  }
+
+  .property-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: $spacing-unit * 0.25;
+    color: $dark-text-color;
+  }
+
+  .property-address {
+    font-size: 0.9rem;
+    color: $inactive-tab-color;
+    margin-bottom: $spacing-unit;
+  }
+
+  .property-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-unit * 1.25;
+    margin-bottom: $spacing-unit * 1.25;
+    padding-bottom: $spacing-unit * 1.25;
+    border-bottom: 1px solid $border-color;
+    font-size: 0.9rem;
+    color: $inactive-tab-color;
+
+    span {
+      display: inline-flex;
+      align-items: center;
+      svg {
+        margin-right: $spacing-unit * 0.4;
+        width: 18px;
+        height: 18px;
+        opacity: 0.7;
+      }
+    }
+  }
+
+  .card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+  }
+
+  .property-status {
+    font-weight: 500;
+    color: $inactive-tab-color;
+  }
+
+  .property-actions {
+    display: flex;
+    gap: $spacing-unit * 0.5;
+
+    button {
+      background: none;
+      border: none;
+      padding: $spacing-unit * 0.25;
+      cursor: pointer;
+      color: $inactive-tab-color;
+      display: flex;
+
+      svg {
+        width: 20px;
+        height: 20px;
+        opacity: 0.7;
+        transition: opacity 0.2s ease;
+      }
+
+      &:hover svg {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.see-more-btn {
+  display: block;
+  margin: ($spacing-unit * 2.5) auto 0 auto;
+  min-width: 180px;
+}
+
+.need-help {
+  background-color: $light-grey-bg;
+  .section-title, .section-subtitle {
+    text-align: left;
+  }
+  .section-title { margin-bottom: $spacing-unit * 0.25; }
+  .section-subtitle { margin-bottom: 0; }
+}
+
+.help-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: $spacing-unit * 2;
+}
+
+.help-text {
+  flex-basis: 55%;
+  min-width: 300px;
+}
+
+.help-actions {
+  display: flex;
+  gap: $spacing-unit;
+  flex-wrap: wrap;
+}
+
+.site-footer {
+  padding-top: $spacing-unit * 3;
+  padding-bottom: $spacing-unit * 1.5;
+  color: $text-color;
+
+  strong { color: $text-color; }
+  a { color: $secondary-text-color; text-decoration: none; &:hover { color: $text-color; } }
+
+  p {
+    color: $secondary-text-color;
+    font-size: 0.9rem;
+    margin-bottom: $spacing-unit * 0.75;
+    line-height: 1.5;
+  }
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: $spacing-unit * 2.5;
+  padding-bottom: $spacing-unit * 2;
+  margin-bottom: $spacing-unit * 2;
+  border-bottom: 1px solid lighten($dark-bg-color, 15%);
+}
+
+.footer-logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: $spacing-unit;
+  color: $text-color;
+}
+
+.footer-heading {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: $spacing-unit;
+  color: $secondary-text-color;
+}
+
+.footer-col {
+  flex: 1;
+  min-width: 220px;
+}
+
+.social-icons {
+  display: flex;
+  gap: $spacing-unit;
+  a {
+    display: inline-block;
+    svg {
+      width: 20px;
+      height: 20px;
+      path, rect, circle {
+        fill: $secondary-text-color;
+        stroke: $secondary-text-color;
+        transition: fill 0.2s ease, stroke 0.2s ease;
+      }
+    }
+    &:hover svg {
+      path, rect, circle {
+        fill: $text-color;
+        stroke: $text-color;
+      }
+    }
+    &[aria-label="Facebook"] svg path,
+    &[aria-label="Twitter"] svg path {
+      stroke: none;
+    }
+    &[aria-label="Instagram"] svg path,
+    &[aria-label="Instagram"] svg rect,
+    &[aria-label="LinkedIn"] svg path,
+    &[aria-label="LinkedIn"] svg circle {
+      fill: none;
+    }
+  }
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: $spacing-unit;
+  font-size: 0.85rem;
+  color: $secondary-text-color;
+
+  p { margin: 0; }
+}
+
+.footer-nav {
+  display: flex;
+  gap: $spacing-unit * 1.5;
+}
+
+@media (max-width: 992px) {
+  .hero {
+    .hero-title { font-size: 2.5rem; }
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    .hero-title { font-size: 2rem; }
+  }
+  .search-widget {
+    .search-form {
+      .search-input-group {
+        flex-wrap: wrap;
+        padding: 10px 15px;
+        border-radius: $border-radius-widget;
+      }
+      .search-input {
+        margin-bottom: 10px;
+        width: calc(100% - 40px);
+      }
+      .advanced-button {
+        margin-left: 0;
+        width: calc(50% - 5px);
+        justify-content: center;
+        margin-right: 5px;
+      }
+      .search-button {
+        width: calc(50% - 5px);
+        height: 44px;
+        margin-left: 5px;
+        border-radius: $border-radius-large;
+      }
+    }
+  }
+
+  .section-title { font-size: 1.8rem; }
+  .help-container { flex-direction: column; align-items: flex-start; }
+  .help-actions { width: 100%; justify-content: flex-start; }
+  .footer-container { flex-direction: column; }
+  .footer-bottom { flex-direction: column; align-items: center; text-align: center; }
+  .footer-nav { margin-top: $spacing-unit; }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    .hero-header { padding-left: $spacing-unit; padding-right: $spacing-unit; }
+  }
+  .search-widget {
+    .search-tabs {
+      .tab-item { padding: 8px 10px 12px 10px; font-size: 15px; }
+    }
+    .search-form {
+      .advanced-button, .search-button { width: 100%; margin: 5px 0 0 0; }
+      .advanced-button { margin-right: 0;}
+    }
+  }
+  .btn { padding: ($spacing-unit * 0.6) ($spacing-unit * 1.2); font-size: 0.9rem;}
+  .help-actions { flex-direction: column; align-items: stretch; }
+  .help-actions .btn { width: 100%; text-align: center; }
 }
