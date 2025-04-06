@@ -1,7 +1,10 @@
 [
   {
     "id": 1,
-    "imageSrc": "images/property1.jpg",
+    "imageSrcs": [
+      "/images/property_1/property1.jpg",
+      "/images/property_1/interior_property_1.jpg"
+    ],
     "imageAlt": "Luxury Family Home",
     "price": "$5,800",
     "title": "Luxury Family Home",
@@ -13,7 +16,10 @@
   },
   {
     "id": 2,
-    "imageSrc": "images/property2.jpg",
+    "imageSrcs": [
+      "/images/property_2/property2.jpg",
+      "/images/property_2/interior_property_2.jpg"
+    ],
     "imageAlt": "Gorgeous Villa Bay",
     "price": "$4,800",
     "title": "Gorgeous Villa Bay",
@@ -25,7 +31,10 @@
   },
   {
     "id": 3,
-    "imageSrc": "images/property3.jpg",
+    "imageSrcs": [
+      "/images/property_3/property3.jpg",
+      "/images/property_3/interior_property_3.jpg"
+    ],
     "imageAlt": "Skyper Pool Apartment",
     "price": "$2,850",
     "title": "Skyper Pool Apartment",
@@ -37,7 +46,10 @@
   },
   {
     "id": 4,
-    "imageSrc": "images/property4.jpg",
+    "imageSrcs": [
+      "/images/property_4/property4.jpg",
+      "/images/property_4/interior_property_4.jpg"
+    ],
     "imageAlt": "Diamond Manor Apartment",
     "price": "$3,500",
     "title": "Diamond Manor Apartment",
@@ -46,5 +58,170 @@
     "baths": 1,
     "sqft": 200,
     "status": "For Sale"
+  },
+  {
+    "id": 5,
+    "imageSrcs": [
+      "/images/property_5/property5.jpg",
+      "/images/property_5/interior_property_5.jpg"
+    ],
+    "imageAlt": "Ocean Breeze Retreat",
+    "price": "$6,200",
+    "title": "Ocean Breeze Retreat",
+    "address": "500 Beach Ave, Miami",
+    "beds": 5,
+    "baths": 3,
+    "sqft": 450,
+    "status": "For Sale"
+  },
+  {
+    "id": 6,
+    "imageSrcs": [
+      "/images/property_6/property6.jpg",
+      "/images/property_6/interior_property_6.jpg"
+    ],
+    "imageAlt": "Penthouse Loft",
+    "price": "$7,500",
+    "title": "Penthouse Loft",
+    "address": "212 Park Ave, Manhattan",
+    "beds": 4,
+    "baths": 3,
+    "sqft": 550,
+    "status": "For Rent"
+  },
+  {
+    "id": 7,
+    "imageSrcs": [
+      "/images/property_7/property7.jpg",
+      "/images/property_7/interior_property_7.jpg"
+    ],
+    "imageAlt": "Sunny Beach Condo",
+    "price": "$3,200",
+    "title": "Sunny Beach Condo",
+    "address": "432 Seaside Blvd, California",
+    "beds": 2,
+    "baths": 2,
+    "sqft": 150,
+    "status": "For Sale"
+  },
+  {
+    "id": 8,
+    "imageSrcs": [
+      "/images/property_8/property8.jpg",
+      "/images/property_8/interior_property_8.jpg"
+    ],
+    "imageAlt": "Urban Oasis",
+    "price": "$4,000",
+    "title": "Urban Oasis",
+    "address": "77 5th Ave, New York",
+    "beds": 3,
+    "baths": 2,
+    "sqft": 300,
+    "status": "For Sale"
+  },
+  {
+    "id": 9,
+    "imageSrcs": [
+      "/images/property_9/property9.jpg",
+      "/images/property_9/interior_property_9.jpg"
+    ],
+    "imageAlt": "Luxury Loft Downtown",
+    "price": "$6,800",
+    "title": "Luxury Loft Downtown",
+    "address": "150 Broadway St, Austin",
+    "beds": 4,
+    "baths": 2,
+    "sqft": 400,
+    "status": "For Rent"
+  },
+  {
+    "id": 10,
+    "imageSrcs": [
+      "/images/property_10/property10.jpg",
+      "/images/property_10/interior_property_10.jpg"
+    ],
+    "imageAlt": "Countryside Retreat",
+    "price": "$5,200",
+    "title": "Countryside Retreat",
+    "address": "209 Hilltop Rd, Vermont",
+    "beds": 5,
+    "baths": 3,
+    "sqft": 350,
+    "status": "For Sale"
+  },
+  {
+    "id": 11,
+    "imageSrcs": [
+      "/images/property_11/property11.jpg",
+      "/images/property_11/interior_property_11.jpg"
+    ],
+    "imageAlt": "Modern City Apartment",
+    "price": "$4,500",
+    "title": "Modern City Apartment",
+    "address": "88 Central Ave, San Francisco",
+    "beds": 2,
+    "baths": 2,
+    "sqft": 250,
+    "status": "For Rent"
+  },
+  {
+    "id": 12,
+    "imageSrcs": [
+      "/images/property_12/property12.jpg",
+      "/images/property_12/interior_property_12.jpg"
+    ],
+    "imageAlt": "Mountain View Chalet",
+    "price": "$6,500",
+    "title": "Mountain View Chalet",
+    "address": "33 Ski Lodge Rd, Aspen",
+    "beds": 4,
+    "baths": 3,
+    "sqft": 450,
+    "status": "For Sale"
+  },
+  {
+    "id": 13,
+    "imageSrcs": [
+      "/images/property_13/property13.jpg",
+      "/images/property_13/interior_property_13.jpg"
+    ],
+    "imageAlt": "Luxury Riverside Mansion",
+    "price": "$10,000",
+    "title": "Luxury Riverside Mansion",
+    "address": "99 Riverbend Dr, Los Angeles",
+    "beds": 7,
+    "baths": 4,
+    "sqft": 600,
+    "status": "For Sale"
+  },
+  {
+    "id": 14,
+    "imageSrcs": [
+      "/images/property_14/property14.jpg",
+      "/images/property_14/interior_property_14.jpg"
+    ],
+    "imageAlt": "Downtown Penthouse",
+    "price": "$8,500",
+    "title": "Downtown Penthouse",
+    "address": "123 Downtown St, Chicago",
+    "beds": 5,
+    "baths": 3,
+    "sqft": 500,
+    "status": "For Rent"
+  },
+  {
+    "id": 15,
+    "imageSrcs": [
+      "/images/property_15/property15.jpg",
+      "/images/property_15/interior_property_15.jpg"
+    ],
+    "imageAlt": "Chic Studio Apartment",
+    "price": "$2,300",
+    "title": "Chic Studio Apartment",
+    "address": "77 Orchard St, New York",
+    "beds": 1,
+    "baths": 1,
+    "sqft": 120,
+    "status": "For Rent"
   }
 ]
