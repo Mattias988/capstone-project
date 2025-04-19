@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # 🚀 Frontend Project
 
 A simple frontend project using **HTML**, **SCSS**, and **JavaScript**, with a development server powered by `npm run dev`.
@@ -61,5 +60,3 @@ Made with ❤️ by Maciej Korsakowski
 
 ✨ Happy coding!
 =======
-# capstone-project
->>>>>>> 45798fe05d4e99da09e718b255f7cd0e10c9a505
